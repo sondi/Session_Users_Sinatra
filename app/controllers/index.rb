@@ -1,3 +1,10 @@
+before '/secret_page' do
+	puts "entramos"
+	if session[:email] == nil
+		redirect to '/'
+	end
+end
+
 get '/' do
   # La siguiente linea hace render de la vista 
   # que esta en app/views/index.erb
